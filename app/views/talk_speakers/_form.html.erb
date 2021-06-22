@@ -1,0 +1,27 @@
+<%= form_with(model: talk_speaker) do |form| %>
+  <% if talk_speaker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(talk_speaker.errors.count, "error") %> prohibited this talk_speaker from being saved:</h2>
+
+      <ul>
+        <% talk_speaker.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :talk_id %>
+    <%= form.collection_select(:talk_id, Talk.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :speaker_id %>
+    <%= form.collection_select(:speaker_id, Speaker.all, :id, :full_name) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:'btn btn-success'%>
+  </div>
+<% end %>

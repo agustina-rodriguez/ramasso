@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="alert alert-info">
+  <p>
+    <h3><strong><%= @talk.name.upcase %></strong></h3>
+    <strong>Horario: </strong><%= @talk.schedule %><br>
+    <strong>Evento: </strong><%= @talk.event.name %><br><br>
+    <h6><strong>Speakers: </strong></h6>
+    <% @talk.talk_speakers.all.each do | ts | %>
+      <li><%= link_to ts.speaker.full_name, ts %></li>
+    <% end %>
+  </p>
+</div>
+
+<!-- <p>
+  <strong>Speakers:</strong>
+  <%#= @talk.talk_speakers.speaker_id(:id => 1) %>
+  <%#= @talk.talk_speakers.speaker.full_name %>
+  <%# @talk.talk_speakers.all.each do |ts| %>
+    <br><%#= ts.speaker.full_name %>,
+  <%# end %>
+</p> -->
+
+<%= link_to 'Edit', edit_talk_path(@talk), class:'btn btn-sm btn-outline-primary' %>
+<%= link_to 'Back', talks_path, class:'btn btn-sm btn-outline-secondary' %>

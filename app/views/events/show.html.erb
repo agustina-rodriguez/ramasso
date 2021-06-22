@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="alert alert-info">
+  <p>
+    <h3><strong><%= @event.name.upcase %></strong></h3>
+    <strong>Edition:</strong><%= @event.edition %><br>
+    <strong>Location:</strong><%= @event.location %>
+  </p>
+</div>
+
+<%= link_to 'Edit', edit_event_path(@event), class:'btn btn-sm btn-outline-primary' %>
+<%= link_to 'Back', events_path, class:'btn btn-sm btn-outline-secondary' %>

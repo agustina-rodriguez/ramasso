@@ -1,0 +1,2 @@
+module TalkSpeakersHelper
+end

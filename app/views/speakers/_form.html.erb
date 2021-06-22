@@ -1,0 +1,42 @@
+<%= form_with(model: speaker) do |form| %>
+  <% if speaker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(speaker.errors.count, "error") %> prohibited this speaker from being saved:</h2>
+
+      <ul>
+        <% speaker.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :biography %>
+    <%= form.text_area :biography %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birth_date %>
+    <%= form.date_select :birth_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_id %>
+    <%= form.collection_select(:event_id, Event.all, :id, :name) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:'btn btn-success' %>
+  </div>
+<% end %>

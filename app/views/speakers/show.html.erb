@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<div class="alert alert-info">
+  <p>
+    <h3><strong><%= @speaker.first_name %> <%= @speaker.last_name %> </strong></h3>
+    <strong>Biography: </strong><%= @speaker.biography %><br>
+    <strong>Birth Date: </strong><%= @speaker.birth_date %><br>
+    <strong>Events: </strong> <%= @speaker.event.name %><br>
+  </p>
+</div>
+
+<%= link_to 'Edit', edit_speaker_path(@speaker), class:'btn btn-sm btn-outline-primary' %>
+<%= link_to 'Back', speakers_path, class:'btn btn-sm btn-outline-secondary' %>

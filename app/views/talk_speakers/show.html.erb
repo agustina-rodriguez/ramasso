@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<div class="alert alert-info">
+  <p>
+    <h3><strong><%= @talk_speaker.talk.name.upcase %></strong></h3>
+    <h6><strong> <%= @talk_speaker.speaker.full_name %> </strong></h6>
+    <strong>Biography: </strong><%= @talk_speaker.speaker.biography %><br>
+    <strong>Birth Date: </strong><%= @talk_speaker.speaker.birth_date %><br>
+  </p>
+</div>
+
+<%= link_to 'Edit', edit_talk_speaker_path(@talk_speaker), class:'btn btn-sm btn-outline-primary' %>
+<%= link_to 'Back', talk_speakers_path, class:'btn btn-sm btn-outline-secondary' %>

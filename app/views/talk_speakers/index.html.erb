@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Talk Speakers</h1>
+
+<table class='table table-hover'>
+  <thead class='table-primary'>
+    <tr>
+      <th>Talk</th>
+      <th>Speaker</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @talk_speakers.each do |talk_speaker| %>
+      <tr>
+        <td><%= talk_speaker.talk.name %></td>
+        <td><%= talk_speaker.speaker.full_name %></td>
+        <td><%= link_to 'Show', talk_speaker, class:'btn btn-sm btn-warning' %></td>
+        <td><%= link_to 'Edit', edit_talk_speaker_path(talk_speaker), class:'btn btn-sm btn-primary' %></td>
+        <td><%= link_to 'Destroy', talk_speaker, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-sm btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Talk Speaker', new_talk_speaker_path, class:'btn btn-success' %>
